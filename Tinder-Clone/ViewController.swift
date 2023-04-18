@@ -8,35 +8,36 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let topStackView = HomeTopStackView()
+    let cardsView = UIView()
+    let bottomStackView = HomeBottomStackView()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-        let subViews = [UIColor.gray, UIColor.darkGray, UIColor.black].map { color in
-            let v = UIView()
-            v.backgroundColor = color
-            return v
-        }
+        setupLayout()
+        setupCards()
+    }
+    
+    fileprivate func setupCards() {
+        let cardView = CardView()
+        cardsView.addSubview(cardView)
+        cardView.fillSuperview()
+    }
+    
+    fileprivate func setupLayout() {
+        let mainStackView = UIStackView(arrangedSubviews: [topStackView, cardsView, bottomStackView])
+        mainStackView.axis = .vertical
+        view.addSubview(mainStackView)
         
-        let topStackView = UIStackView(arrangedSubviews: subViews)
-        topStackView.distribution = .fillEqually
-        topStackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        mainStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
         
-        let blueView = UIView()
-        blueView.backgroundColor = .blue
+        mainStackView.isLayoutMarginsRelativeArrangement = true
+        mainStackView.layoutMargins = .init(top: 0, left: 12, bottom: 0, right: 12)
         
-        let yellowView = UIView()
-        yellowView.backgroundColor = .yellow
-        yellowView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        
-        let stackView = UIStackView(arrangedSubviews: [topStackView, blueView, yellowView])
-        stackView.axis = .vertical
-//        stackView.distribution = .fillEqually
-        
-        view.addSubview(stackView)
-        stackView.frame = view.bounds
-        
-        stackView.fillSuperview()
+        mainStackView.bringSubviewToFront(cardsView)
     }
 }
