@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013DF0C82A142793006CAB51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DF0C72A142793006CAB51 /* User.swift */; };
 		0183467C29E979B00047FECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183467B29E979B00047FECB /* AppDelegate.swift */; };
 		0183467E29E979B00047FECB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183467D29E979B00047FECB /* SceneDelegate.swift */; };
-		0183468029E979B00047FECB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183467F29E979B00047FECB /* ViewController.swift */; };
+		0183468029E979B00047FECB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183467F29E979B00047FECB /* HomeController.swift */; };
 		0183468529E979B10047FECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0183468429E979B10047FECB /* Assets.xcassets */; };
 		0183468829E979B10047FECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0183468629E979B10047FECB /* LaunchScreen.storyboard */; };
 		0183469129E97BCC0047FECB /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183469029E97BCC0047FECB /* Extensions+UIView.swift */; };
@@ -19,10 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013DF0C72A142793006CAB51 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0183467829E979B00047FECB /* Tinder-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0183467B29E979B00047FECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0183467D29E979B00047FECB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0183467F29E979B00047FECB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0183467F29E979B00047FECB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		0183468429E979B10047FECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0183468729E979B10047FECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0183468929E979B10047FECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		013DF0C62A14278D006CAB51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				013DF0C72A142793006CAB51 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0183466F29E979B00047FECB = {
 			isa = PBXGroup;
 			children = (
@@ -62,11 +72,12 @@
 		0183467A29E979B00047FECB /* Tinder-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				013DF0C62A14278D006CAB51 /* Model */,
 				0183468F29E97BBC0047FECB /* Extensions */,
 				0183469229E98D1F0047FECB /* Views */,
 				0183467B29E979B00047FECB /* AppDelegate.swift */,
 				0183467D29E979B00047FECB /* SceneDelegate.swift */,
-				0183467F29E979B00047FECB /* ViewController.swift */,
+				0183467F29E979B00047FECB /* HomeController.swift */,
 				0183468429E979B10047FECB /* Assets.xcassets */,
 				0183468629E979B10047FECB /* LaunchScreen.storyboard */,
 				0183468929E979B10047FECB /* Info.plist */,
@@ -165,7 +176,8 @@
 				0183469829ED9D1B0047FECB /* CardView.swift in Sources */,
 				0183469629E992660047FECB /* HomeTopStackView.swift in Sources */,
 				0183469429E98D2F0047FECB /* HomeBottomStackView.swift in Sources */,
-				0183468029E979B00047FECB /* ViewController.swift in Sources */,
+				0183468029E979B00047FECB /* HomeController.swift in Sources */,
+				013DF0C82A142793006CAB51 /* User.swift in Sources */,
 				0183467C29E979B00047FECB /* AppDelegate.swift in Sources */,
 				0183469129E97BCC0047FECB /* Extensions+UIView.swift in Sources */,
 				0183467E29E979B00047FECB /* SceneDelegate.swift in Sources */,

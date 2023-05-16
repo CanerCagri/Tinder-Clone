@@ -9,7 +9,8 @@ import UIKit
 
 class CardView: UIView {
     
-    private let imageView = UIImageView(image: UIImage(named: "lady5c"))
+    let imageView = UIImageView(image: UIImage(named: "lady5c"))
+    let infoLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,7 +18,14 @@ class CardView: UIView {
         clipsToBounds = true
         
         addSubview(imageView)
+        imageView.contentMode = .scaleAspectFill
         imageView.fillSuperview()
+        
+        addSubview(infoLabel)
+        infoLabel.anchor(top: nil, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 16))
+        infoLabel.textColor = .white
+        infoLabel.font = UIFont.systemFont(ofSize: 34, weight: .heavy)
+        infoLabel.numberOfLines = 0
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         addGestureRecognizer(panGesture)
@@ -51,14 +59,14 @@ class CardView: UIView {
         
         let shouldDismissCard = gesture.translation(in: nil).x > 100  || gesture.translation(in: nil).x < -100
         
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut) {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut) {
             
             if shouldDismissCard {
                 if gesture.translation(in: nil).x > 100 {
-                    let offScreenTransform = self.transform.translatedBy(x: 1000, y: 0)
+                    let offScreenTransform = self.transform.translatedBy(x: 600, y: 0)
                     self.transform = offScreenTransform
                 } else if gesture.translation(in: nil).x < -100 {
-                    let offScreenTransform = self.transform.translatedBy(x: -1000, y: 0)
+                    let offScreenTransform = self.transform.translatedBy(x: -600, y: 0)
                     self.transform = offScreenTransform
                 }
                 
@@ -69,6 +77,11 @@ class CardView: UIView {
         } completion: { _ in
             
             self.transform = .identity
+            
+            if shouldDismissCard {
+                self.removeFromSuperview()
+            }
+            
         }
     }
 }
